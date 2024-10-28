@@ -4,7 +4,10 @@ public class AguardarStrategy implements IStrategy{
 
     @Override
     public void aplicarEstrategia (UnidadeMilitar unidade){
-        System.out.println("<-------------------------STATUS-------------------------->");
         System.out.println(unidade.getNome()+" está mantendo a posição e aguardando ordens...");
+    }
+    @Override
+    public String getNomeEstrategia(){
+        return "Aguardando ordens";
     }
 }

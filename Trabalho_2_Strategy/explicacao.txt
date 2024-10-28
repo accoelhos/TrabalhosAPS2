@@ -1,0 +1,3 @@
+Para incluir uma nova estratégia, é necessário criar uma nova classe de estratégia que implemente a interface IStrategy. 
+exemplo: public class NovaEstrategiaStratey implements IStrategy... -> implementando os métodos adequados
+Após isso, deve-se adicionar essa nova estratégia como opção no menuEstrategias na Main e criar o case (algum numero) -> new NovaEstrategiaStratey ();

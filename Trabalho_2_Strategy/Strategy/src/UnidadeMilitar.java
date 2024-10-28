@@ -5,10 +5,9 @@ public class UnidadeMilitar {
     private int ataque = 50;
     private int furtividade = 50;
 
-
-    public UnidadeMilitar(String nome, IStrategy estrategia){
+    public UnidadeMilitar(String nome, IStrategy estrategiaInicial){
         this.nome = nome;
-        this.estrategia = estrategia;
+        this.estrategia = estrategiaInicial;
     }
 
     public void usarEstrategia(){
@@ -19,6 +18,9 @@ public class UnidadeMilitar {
         this.estrategia = estrategia;
     }
 
+    public IStrategy getEstrategia(){
+        return estrategia;
+    }
 
     public String getNome() {
         return nome;
@@ -53,10 +55,12 @@ public class UnidadeMilitar {
     }
 
     public void exibirStatus(){
-        System.out.println("Unidade militar: "+nome);
-        System.out.println("\nForça de ataque: "+ataque);
-        System.out.println("\nPoder defensivo: "+defesa);
-        System.out.println("\nFurtividade: "+furtividade);
+        System.out.println("\n*******************");
+        System.out.println("Unidade militar: " + nome);
+        System.out.println("Estratégia: " + estrategia.getNomeEstrategia());
+        System.out.println("Força de ataque: " + ataque);
+        System.out.println("Poder defensivo: " + defesa);
+        System.out.println("Furtividade: " + furtividade);
+        System.out.println("*******************\n");
     }
-
 }

@@ -6,11 +6,15 @@
 public class AtaqueStrategy implements IStrategy{
     @Override
     public void aplicarEstrategia (UnidadeMilitar unidade){
-        System.out.println("<-------------------------STATUS-------------------------->");
-        System.out.println(unidade.getNome()+" está usando a estratégia de defesa em formação...");
+        System.out.println(unidade.getNome()+" está usando a estratégia de ataque direto...");
         unidade.setAtaque(unidade.getAtaque()+30);
         unidade.setDefesa(unidade.getDefesa()-15);
         unidade.setFurtividade(unidade.getFurtividade()-20);
-        unidade.exibirStatus();
+       
+
+    }
+    @Override
+    public String getNomeEstrategia(){
+        return "Estratégia de Ataque";
     }
 }
