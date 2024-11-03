@@ -7,10 +7,10 @@ public class Cliente {
         //criando fabricante de carros
         Fabricante fabricanteCarro = new Fabricante("Honda Carros");
 
-        //criando as concessionarias -> assinantes
-        Concessionaria conc1 = new Concessionaria("Honda Caxias");
-        Concessionaria conc2 = new Concessionaria("Honda Penha");
-        Concessionaria conc3 = new Concessionaria("Honda Barra");
+        //criando as concessionarias -> assinantes/observadores
+        Observador conc1 = new Concessionaria("Honda Caxias");
+        Observador conc2 = new Concessionaria("Honda Penha");
+        Observador conc3 = new Concessionaria("Honda Barra");
 
         //adicionando as concessionarias na lista de assinantes da fabricante de carros
         fabricanteCarro.addConcessionarias(conc1);
