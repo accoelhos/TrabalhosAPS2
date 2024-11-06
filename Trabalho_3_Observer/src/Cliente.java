@@ -1,41 +1,29 @@
-//concessionarias sao os assinantes(observadores)
-//fabricantes sao as publicadoras 
-//carros e motos sao os produtos
-
+//foruns musicais sao os assinantes(observadores)
+//produtoras sao as publicadoras 
+//musicas e albuns sao os produtos
+//quando uma produtora produz uma musica ou um album, os foruns musicais devem ser notificados
 public class Cliente {
     public static void main(String[] args) {
-        //criando fabricante de carros
-        Fabricante fabricanteCarro = new Fabricante("Honda Carros");
-
-        //criando as concessionarias -> assinantes/observadores
-        Observador conc1 = new Concessionaria("Honda Caxias");
-        Observador conc2 = new Concessionaria("Honda Penha");
-        Observador conc3 = new Concessionaria("Honda Barra");
-
-        //adicionando as concessionarias na lista de assinantes da fabricante de carros
-        fabricanteCarro.addConcessionarias(conc1);
-        fabricanteCarro.addConcessionarias(conc2);
-        fabricanteCarro.addConcessionarias(conc3);
-        
-        //passando o carro produzido para a fabricante(publicadora) notificar as concessionarias(assinantes)
-        fabricanteCarro.produz("carro","Honda Fit");
-
-        //criando uma fabricante de motos
-        Fabricante fabricanteMoto = new Fabricante("Honda Motos");
-        //adicionando as concessionarias na lista de assinantes da fabricante de motos
-        fabricanteMoto.addConcessionarias(conc1);
-        fabricanteMoto.addConcessionarias(conc2);
-        fabricanteMoto.addConcessionarias(conc3);
-        //passando a moto produzida para a fabricante(publicadora) notificar as concessionarias (assinantes)
-        fabricanteMoto.produz("moto","CG 160 Fan");
-
-        //produzindo mais um carro
-        fabricanteCarro.produz("carro","Honda Civic 2024");
-        //prouzindo mais uma moto
-        fabricanteMoto.produz("moto","Pop 110i ES");
-
-        //removendo a concessionaria Honda Barra da lista de assinantes da fabricante de motos e criando mais uma moto para teste
-        fabricanteMoto.removeConcessionarias(conc3);
-        fabricanteMoto.produz("moto", "PCX");
+        //criando produtoras
+        Produtora produtora1 = new Produtora("Som Maneiro");
+        Produtora produtora2 = new Produtora("Prod APS");
+        //criando os foruns -> assinantes/observadores
+        Observador forum1 = new ForumMusical("Musica Aqui!");
+        Observador forum2 = new ForumMusical("Kboing");
+        Observador forum3 = new ForumMusical("Lalaland");
+        Observador forum4 = new ForumMusical("Spopoty");
+        //adicionando os foruns na lista de assinantes da produtora 1
+        produtora1.addForuns(forum1);
+        produtora1.addForuns(forum2);
+        produtora1.addForuns(forum3);
+        //adicionando os foruns na lista de assinantes da produtora 2
+        produtora2.addForuns(forum4);
+        produtora2.addForuns(forum3);
+        //passando o elemento produzido para a produtora(publicadora) notificar os foruns(assinantes)
+        produtora1.produz("música","A música mais maneira de todas");
+        produtora2.produz("álbum","Coletânia de sucessos de APS2");
+        //removendo um forum da lista de assinantes da produtora 1 e criando mais uma musica para teste
+        produtora1.removeForuns(forum3);
+        produtora1.produz("música", "Música do cachorro salsicha");
     }
 }

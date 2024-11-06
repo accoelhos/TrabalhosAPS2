@@ -1,3 +1,3 @@
 public interface Observador {
-    void atualizar(String tipoVeiculo, String modelo);
+    void atualizar(String tipo, String nome);
 }
