@@ -23,11 +23,11 @@ public class Produtora {
         System.out.println("\n===========================================================================================================");
         System.out.println("Produtora "+nomeProdutora+" produziu e lançou "+tipo+" "+nome+"!");
         System.out.println("===========================================================================================================");
-        notificaConcessionarias(tipo, nome);
+        notificaForuns(tipo, nome);
     }
 
     //notificar foruns 
-    private void notificaConcessionarias(String tipo, String nome){
+    private void notificaForuns(String tipo, String nome){
         for(Observador f : foruns){
             f.atualizar(tipo, nome);
         }
