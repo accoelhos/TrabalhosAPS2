@@ -1,7 +1,7 @@
 public class Hamburguer {
-    private float qtdCarne;
-    private float qtdQueijo;
-    private float qtdBacon;
+    private int qtdCarne;
+    private int qtdQueijo;
+    private int qtdBacon;
     private String tipoPao;
     private String tipoQueijo;
     private String tipoCarne;
@@ -11,28 +11,28 @@ public class Hamburguer {
 
     //getters and setters de hamburguer
     
-    public float getQtdCarne() {
+    public int getQtdCarne() {
         return qtdCarne;
     }
 
  
-    public void setQtdCarne(float qtdCarne) {
+    public void setQtdCarne(int qtdCarne) {
         this.qtdCarne = qtdCarne;
     }
 
-    public float getQtdQueijo() {
+    public int getQtdQueijo() {
         return qtdQueijo;
     }
 
-    public void setQtdQueijo(float qtdQueijo) {
+    public void setQtdQueijo(int qtdQueijo) {
         this.qtdQueijo = qtdQueijo;
     }
 
-    public float getQtdBacon() {
+    public int getQtdBacon() {
         return qtdBacon;
     }
 
-    public void setQtdBacon(float qtdBacon) {
+    public void setQtdBacon(int qtdBacon) {
         this.qtdBacon = qtdBacon;
     }
 

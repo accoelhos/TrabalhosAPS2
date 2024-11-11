@@ -3,7 +3,7 @@ public class BuilderVeg implements Builder{
     Hamburguer h = new Hamburguer();
 
     @Override
-    public Builder setCarne(float qtdCarne) {
+    public Builder setCarne(int qtdCarne) {
         h.setQtdCarne(qtdCarne);
         h.setTipoCarne("soja");
         System.out.println("Adicionando "+(qtdCarne)+ " gramas de carne de soja. Oh yeah.");
@@ -11,7 +11,7 @@ public class BuilderVeg implements Builder{
     }
 
     @Override
-    public Builder setQueijo(float qtdQueijo, String tipoQueijo) {
+    public Builder setQueijo(int qtdQueijo, String tipoQueijo) {
 
         if(qtdQueijo == 0){
             h.setQtdQueijo(0);
@@ -26,7 +26,7 @@ public class BuilderVeg implements Builder{
     }
 
     @Override
-    public Builder setBacon(float qtdBacon) {
+    public Builder setBacon(int qtdBacon) {
        System.out.println("Não adiciona bacon. Você não pode comer isso!");
        h.setQtdBacon(0);
        return this;
@@ -72,6 +72,10 @@ public class BuilderVeg implements Builder{
             h.setQtdBacon(ovoCodorna);
         }
         return this;
+    }
+    @Override
+    public Hamburguer build(){
+        return h;
     }
 
 }

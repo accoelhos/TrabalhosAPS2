@@ -3,7 +3,7 @@ public class BuilderPressa implements Builder{
     Hamburguer h = new Hamburguer();
 
     @Override
-    public Builder setCarne(float qtdCarne) {
+    public Builder setCarne(int qtdCarne) {
         h.setQtdCarne(qtdCarne -50);
         h.setTipoCarne("passada");
         System.out.println("Adicionando "+(qtdCarne -50)+ " gramas de carne passada por causa da pressa...");
@@ -11,7 +11,7 @@ public class BuilderPressa implements Builder{
     }
 
     @Override
-    public Builder setQueijo(float qtdQueijo, String tipoQueijo) {
+    public Builder setQueijo(int qtdQueijo, String tipoQueijo) {
 
         if(qtdQueijo == 0){
             h.setQtdQueijo(0);
@@ -25,7 +25,7 @@ public class BuilderPressa implements Builder{
     }
 
     @Override
-    public Builder setBacon(float qtdBacon) {
+    public Builder setBacon(int qtdBacon) {
         
         if(qtdBacon == 0){
             h.setQtdBacon(0);
@@ -77,6 +77,10 @@ public class BuilderPressa implements Builder{
             h.setQtdBacon(ovoCodorna-1);
         }
         return this;
+    }
+    @Override
+    public Hamburguer build(){
+        return h;
     }
 
 }

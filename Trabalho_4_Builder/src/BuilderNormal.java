@@ -1,12 +1,12 @@
 //esse builder é generoso então as quantidades podem ser aumentadas
-public class BuilderGeneroso implements Builder{
+public class BuilderNormal implements Builder{
     Hamburguer h = new Hamburguer();
 
     @Override
     public Builder setCarne(int qtdCarne) {
-        h.setQtdCarne(qtdCarne +100);
-        h.setTipoCarne("bovina de primeira");
-        System.out.println("Adicionando "+(qtdCarne +100)+ " gramas de carne bovina de primeira");
+        h.setQtdCarne(qtdCarne);
+        h.setTipoCarne("bovina");
+        System.out.println("Adicionando "+(qtdCarne)+ " gramas de carne");
         return this;
     }
 
@@ -18,8 +18,8 @@ public class BuilderGeneroso implements Builder{
             h.setTipoQueijo(null);
             System.out.println("Não adiciona queijo");
         }else{
-            System.out.println("Adicionando "+(qtdQueijo+10)+ " gramas de queijo "+tipoQueijo);
-            h.setQtdQueijo(qtdQueijo+10);
+            System.out.println("Adicionando "+(qtdQueijo)+ " gramas de queijo "+tipoQueijo);
+            h.setQtdQueijo(qtdQueijo);
             h.setTipoQueijo(tipoQueijo);
         }
         return this;
@@ -32,8 +32,8 @@ public class BuilderGeneroso implements Builder{
             h.setQtdBacon(0);
             System.out.println("Não adiciona bacon");
         }else{
-            System.out.println("Adicionando "+(qtdBacon+20)+" gramas de bacon");
-            h.setQtdBacon(qtdBacon+20);
+            System.out.println("Adicionando "+(qtdBacon)+" gramas de bacon");
+            h.setQtdBacon(qtdBacon);
         }
         return this;
     }
@@ -41,7 +41,7 @@ public class BuilderGeneroso implements Builder{
     @Override
     public Builder setTipoPao(String tipoPao) {
         h.setTipoPao(tipoPao);
-        System.out.println("Adicionando o melhor pão encontrado do tipo "+ tipoPao);
+        System.out.println("Adicionando o pão do tipo "+ tipoPao);
         return this;
     }
 
@@ -49,7 +49,7 @@ public class BuilderGeneroso implements Builder{
     public Builder setSalada(boolean salada) {
         h.setSalada(salada);
         if(salada){
-            System.out.println("Adicionando muita salada generosamente");
+            System.out.println("Adicionando salada");
         }else{
             System.out.println("Não adiciona salada");
         }
@@ -60,7 +60,7 @@ public class BuilderGeneroso implements Builder{
     public Builder setCebola(boolean cebola) {
         h.setCebola(cebola);
         if(cebola){
-            System.out.println("Adicionando cebola generosamente");
+            System.out.println("Adicionando cebola");
         }else{
             System.out.println("Não adiciona cebola");
         }
@@ -74,8 +74,8 @@ public class BuilderGeneroso implements Builder{
             h.setOvoCodorna(0);
             System.out.println("Não adiciona ovo de codorna");
         }else{
-            System.out.println("Adicionando "+(ovoCodorna+5)+" ovos de codorna");
-            h.setQtdBacon(ovoCodorna+5);
+            System.out.println("Adicionando "+(ovoCodorna)+" ovos de codorna");
+            h.setQtdBacon(ovoCodorna);
         }
         return this;
     }
