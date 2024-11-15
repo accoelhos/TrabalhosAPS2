@@ -1,3 +1,5 @@
+import java.util.concurrent.TimeUnit;
+
 //esse builder é generoso então as quantidades podem ser aumentadas
 public class BuilderGeneroso implements Builder{
     Hamburguer h = new Hamburguer();
@@ -7,6 +9,7 @@ public class BuilderGeneroso implements Builder{
         h.setQtdCarne(qtdCarne +100);
         h.setTipoCarne("bovina de primeira");
         System.out.println("Adicionando "+(qtdCarne +100)+ " gramas de carne bovina de primeira");
+        pausa();
         return this;
     }
 
@@ -18,10 +21,11 @@ public class BuilderGeneroso implements Builder{
             h.setTipoQueijo(null);
             System.out.println("Não adiciona queijo");
         }else{
-            System.out.println("Adicionando "+(qtdQueijo+10)+ " gramas de queijo "+tipoQueijo);
-            h.setQtdQueijo(qtdQueijo+10);
+            System.out.println("Adicionando "+(qtdQueijo+100)+ " gramas de queijo "+tipoQueijo);
+            h.setQtdQueijo(qtdQueijo+100);
             h.setTipoQueijo(tipoQueijo);
         }
+        pausa();
         return this;
     }
 
@@ -35,6 +39,7 @@ public class BuilderGeneroso implements Builder{
             System.out.println("Adicionando "+(qtdBacon+20)+" gramas de bacon");
             h.setQtdBacon(qtdBacon+20);
         }
+        pausa();
         return this;
     }
 
@@ -42,6 +47,7 @@ public class BuilderGeneroso implements Builder{
     public Builder setTipoPao(String tipoPao) {
         h.setTipoPao(tipoPao);
         System.out.println("Adicionando o melhor pão encontrado do tipo "+ tipoPao);
+        pausa();
         return this;
     }
 
@@ -53,6 +59,7 @@ public class BuilderGeneroso implements Builder{
         }else{
             System.out.println("Não adiciona salada");
         }
+        pausa();
         return this;
     }
 
@@ -64,6 +71,7 @@ public class BuilderGeneroso implements Builder{
         }else{
             System.out.println("Não adiciona cebola");
         }
+        pausa();
         return this;
     }
 
@@ -75,13 +83,22 @@ public class BuilderGeneroso implements Builder{
             System.out.println("Não adiciona ovo de codorna");
         }else{
             System.out.println("Adicionando "+(ovoCodorna+5)+" ovos de codorna");
-            h.setQtdBacon(ovoCodorna+5);
+            h.setOvoCodorna(ovoCodorna+5);
         }
+        pausa();
         return this;
     }
     @Override
     public Hamburguer build(){
         return h;
+    }
+    //metodo para pausar
+    private void pausa() {
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
 }

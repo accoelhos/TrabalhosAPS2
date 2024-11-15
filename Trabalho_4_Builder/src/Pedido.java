@@ -8,6 +8,7 @@ public class Pedido {
     boolean cebola;
     int ovoCodorna;
 
+
     public Pedido(int qtdCarne, int qtdQueijo, String tipoQueijo, int qtdBacon, String tipoPao, boolean salada, boolean cebola, int ovoCodorna){
         this.qtdCarne = qtdCarne;
         this.qtdQueijo = qtdQueijo;
@@ -16,6 +17,7 @@ public class Pedido {
         this.cebola = cebola;
         this.tipoPao = tipoPao;
         this.ovoCodorna = ovoCodorna;
-    }
+        this.tipoQueijo = tipoQueijo;
 
+    }
 }

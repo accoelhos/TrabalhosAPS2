@@ -86,4 +86,20 @@ public class Hamburguer {
     public void setOvoCodorna(int ovoCodorna) {
         this.ovoCodorna = ovoCodorna;
     }
+    @Override
+    public String toString() {
+        return """
+                \nHamburguer pronto: 
+                \n-> Carne: """ + qtdCarne + "g" +
+                "\n-> Tipo da carne: '" + tipoCarne + '\'' +
+                "\n-> Queijo: " + qtdQueijo + "g" +
+                "\n-> Tipo queijo: '" + tipoQueijo + '\'' +
+                "\n-> Bacon: " + qtdBacon + "g" +
+                "\n-> Pao: '" + tipoPao + '\'' +
+                "\n-> Salada: " + (salada ? "Sim" : "Não") +
+                "\n-> Cebola: " + (cebola ? "Sim" : "Não") +
+                "\n-> Ovo de codorna: " + (ovoCodorna > 0 ? ovoCodorna + " ovo(s)" : "Sem ovo de codorna");
+    }
+
+    
 }
