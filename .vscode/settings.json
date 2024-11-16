@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "Trabalho5_Proxy/src/users",
+        "Trabalho5_Proxy/src/Cliente",
+        "Trabalho5_Proxy/src"
+    ]
+}
