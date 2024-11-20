@@ -2,7 +2,7 @@ package proxy;
 
 public class ProtectionProxy implements ControleAcesso{
     private final SalaRestrita salaRestrita;
-    private final String papelAdmin = "ADMIN";
+    // private final String papelAdmin = "ADMIN";
     private final String [] papeisAutorizados = {"ADMIN", "GERENTE"};
 
     public ProtectionProxy() {
