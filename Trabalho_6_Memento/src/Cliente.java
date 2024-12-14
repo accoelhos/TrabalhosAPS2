@@ -65,8 +65,7 @@ public class Cliente {
     public static void remover(Caretaker c, Mapa m) {
         String nome;
         int x, y;
-        Scanner s = new Scanner(System.in);
-        //falta logica se n houver elementos 
+        Scanner s = new Scanner(System.in); 
         System.out.println("\nDigite o nome do elemento a ser removido:");
         nome = s.nextLine();
         System.out.println("Digite a posição x no mapa: ");
